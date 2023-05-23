@@ -8,7 +8,7 @@ pylint
 ruff
 black
 flake8
-coverage
+coverage[toml]
 # documentation------------
 sphinx
 myst-parser

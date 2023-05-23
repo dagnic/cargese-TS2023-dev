@@ -3,7 +3,7 @@ test_tools.py
 """
 import datetime
 
-import cargese.tools as tools
+from src.cargese import tools
 
 
 def test_timestamp_to_datetime():

@@ -8,7 +8,7 @@ import json
 import logging
 import pandas as pd
 
-import cargese.tools as tools
+from cargese import tools
 
 GCN_URL = "https://gcn.nasa.gov/circulars"
 
@@ -53,6 +53,8 @@ class GcnRequester:
             circ_json = get_circular_json(cir_id)
             if circ_json != {}:
                 logger.info("Found %s: %s", cir_id, circ_json["subject"])
+            else:
+                continue
             if not body:
                 circ_json.pop("body")
             circulars.append(circ_json)
@@ -62,5 +64,7 @@ class GcnRequester:
         """
         Format the time info from circular `createdOn` field to regularr UTC date
         """
-        time = [tools.timestamp_to_datetime(ts / 1000) for ts in self.archive["createdOn"]]
+        time = [
+            tools.timestamp_to_datetime(ts / 1000) for ts in self.archive["createdOn"]
+        ]
         self.archive["createdOn"] = time
