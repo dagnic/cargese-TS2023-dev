@@ -1,0 +1,16 @@
+# package dependencies ----
+pandas
+# packaging ---------------
+setuptools
+pytest
+# code analysers ----------
+pylint
+ruff
+black
+coverage
+# documentation------------
+sphinx
+myst-parser
+sphinx_rtd_theme
+sphinx-automodapi
+sphinx-argparse

@@ -1,0 +1,2 @@
+[console_scripts]
+gcn-requester = cargese.scripts.cargese_gcn_requester:main

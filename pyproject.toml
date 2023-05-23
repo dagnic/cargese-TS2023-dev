@@ -1,0 +1,16 @@
+[project]
+name = "cargese"
+version = "0.0.1"
+authors = [
+    {name = "Nicolas Dagoneau", email = "nicolas.dagoneau@cea.fr"},
+]
+description = "Tutorial package for Transient Universe 2023 summer school in Cargese"
+readme = "README.md"
+dependencies = [
+    "requests",
+    "pandas",
+    'importlib-metadata; python_version<"3.8"',
+]
+
+[project.scripts]
+gcn-requester = "cargese.scripts.cargese_gcn_requester:main"
