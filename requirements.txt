@@ -9,6 +9,7 @@ ruff
 black
 flake8
 coverage[toml]
+coveralls
 # documentation------------
 sphinx
 myst-parser

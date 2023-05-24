@@ -41,6 +41,9 @@ jobs:
       run: |
         pytest tests/
     - name: Coverage
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
         coverage run --source src/cargese -m pytest
         coverage report
+        coveralls --service=github
