@@ -46,4 +46,5 @@ jobs:
       run: |
         coverage run --source src/cargese -m pytest
         coverage report
-        coveralls --service=github
+    - name: Coveralls
+      uses: coverallsapp/github-action@v2
