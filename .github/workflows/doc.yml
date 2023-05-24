@@ -1,4 +1,7 @@
-name: Docs
+# This workflow compile the documentation and publish it to github page
+
+name: "Documentation"
+
 on: [push, pull_request, workflow_dispatch]
 permissions:
     contents: write
