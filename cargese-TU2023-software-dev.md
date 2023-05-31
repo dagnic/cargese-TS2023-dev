@@ -16,6 +16,16 @@ Transient Universe 2023 - Cargèse
 
 ---
 
+# Todo before the hands-on
+
+- Create an account on [GitHub](https://github.com/login)
+- Ensure you can work with python (hands-on are tested with 3.10)
+- Install [required packages](https://github.com/dagnic/cargese-TS2023-dev/blob/main/requirements.txt)
+
+I recommend working in a conda environment that is isolated from yours.
+
+---
+
 # Introduction
 
 ## About me
@@ -25,7 +35,8 @@ Transient Universe 2023 - Cargèse
 
 ## Goal of this presentation
 
-- Show you how to turn bunch of python files to package, ready to be shared, tested and documented.
+- Show you how to turn bunch of python files into package, ready to be shared, tested and documented.
+- This is not about data analysis.
 - Based on my own experience (hence biased).
 
 ---
@@ -65,6 +76,32 @@ Basic package structure.
     ├── tests
     │   ├── test_gcn_requester.py
     │   └── test_tools.py
+
+---
+
+# Project configuration in *pyproject.toml*
+
+```toml
+[project]
+name = "cargese"
+version = "0.0.1"
+authors = [
+    {name = "Nicolas Dagoneau", email = "nicolas.dagoneau@cea.fr"},
+]
+description = "Tutorial package for Transient Universe 2023 school in Cargese"
+readme = "README.md"
+dependencies = [
+    "requests",
+    "pandas",
+    'importlib-metadata; python_version<"3.8"',
+]
+
+[project.scripts]
+gcn-requester = "cargese.scripts.cargese_gcn_requester:main"
+
+[tool.coverage.run]
+omit = ["*/scripts/*"]
+```
 
 ---
 
@@ -120,6 +157,20 @@ coverage:
 
 ---
 
+# A few words about git
+
+Manage code versions, back-up, improve team development: [git-guide](https://rogerdudler.github.io/git-guide/), [git-branching](https://learngitbranching.js.org/?locale=en_US)
+
+```bash
+git add new_class.py tests/test_new_class.py
+git commit -m "Implement new class"
+git push
+```
+
+![width:400px](https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2016/11/Git-Architechture-Git-Tutorial-Edureka-2-768x720.png)
+
+---
+
 # Continuous integration: push, build, test, deploy
 
 You can build wathever you want (eg. building pdf for PhD manuscript).
@@ -154,9 +205,9 @@ Implement a new method/class, install, add tests and run them, generate document
 
 # To go further away
 
-- For other languages (eg. C++), you could create bindings to access C++ class via python: [pybind11](https://pybind11.readthedocs.io/en/stable/), [swig](https://www.swig.org/).
+- For other languages (eg. C++), you could create bindings to access C++ classes/methods via python: [pybind11](https://pybind11.readthedocs.io/en/stable/), [swig](https://www.swig.org/).
 - Create your own dashboard to plot results using [plotly/dash](https://dash.plotly.com)
-- Licence for software distribution: that's someting you have to ask yourself about if you want to share your package within the publid domain.
+- Licence for software distribution: that's something you have to consider if you want to share your package within the public domain.
 - Publish package to PyPI: [twine](https://twine.readthedocs.io/en/latest/) 
 - Things can alway be improved: find a balance
 - Code design and factoring is also an important job
