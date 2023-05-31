@@ -1,0 +1,6 @@
+get_circular_json
+=================
+
+.. currentmodule:: cargese.gcn_requester
+
+.. autofunction:: get_circular_json

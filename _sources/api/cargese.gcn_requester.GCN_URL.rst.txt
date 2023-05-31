@@ -1,0 +1,6 @@
+GCN_URL
+=======
+
+.. currentmodule:: cargese.gcn_requester
+
+.. autodata:: GCN_URL

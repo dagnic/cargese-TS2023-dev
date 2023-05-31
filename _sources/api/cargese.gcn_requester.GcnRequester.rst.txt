@@ -1,0 +1,19 @@
+GcnRequester
+============
+
+.. currentmodule:: cargese.gcn_requester
+
+.. autoclass:: GcnRequester
+   :show-inheritance:
+
+   .. rubric:: Methods Summary
+
+   .. autosummary::
+
+      ~GcnRequester.fill_archive
+      ~GcnRequester.format_time
+
+   .. rubric:: Methods Documentation
+
+   .. automethod:: fill_archive
+   .. automethod:: format_time
